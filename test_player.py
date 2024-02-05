@@ -10,10 +10,15 @@ def test_SettingInitialAmount():
     player = Player(50)
     assert player.health == 50
 
-def test_PlayerHealed():
+def test_PlayerHealedToFull():
     player = Player(10)
     player.healPlayer(90)
     assert player.health == 100
+
+def test_PlayerHealed():
+    player = Player(30)
+    player.healPlayer(20)
+    assert player.health == 50
 
 def test_PlayerDamaged():
     player = Player(100)
