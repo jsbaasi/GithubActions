@@ -1,5 +1,5 @@
 class Player():
-    """Class representing a player"""
+    """Class representing a player."""
 
     def __init__(self, initialAmount = 100):
         if initialAmount == 0:
