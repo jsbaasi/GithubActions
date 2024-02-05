@@ -22,8 +22,8 @@ class Player():
             raise PlayerNotAlive("Player is not alive")
         elif (self.health + healAmount) >= 100:
             self.health = 100
-        else:
-            self.health += healAmount
+        # else:
+        #     self.health += healAmount
 
 class PlayerNotAlive(Exception):
     pass
