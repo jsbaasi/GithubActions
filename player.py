@@ -23,7 +23,7 @@ class Player():
         elif (self.health + healAmount) >= 100:
             self.health = 100
         else:
-            self.health -= healAmount
+            self.health += healAmount
 
 class PlayerNotAlive(Exception):
     pass
