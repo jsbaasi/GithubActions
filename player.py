@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/crash')
 def main():
-    raise Exception()
+    print("Vulnerability")
 
 app.run(debug=True)
 

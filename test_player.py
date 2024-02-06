@@ -1,4 +1,5 @@
 import pytest
+from flask import Flask
 from player import Player, PlayerNotAlive
 
 
