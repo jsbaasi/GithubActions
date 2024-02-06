@@ -1,3 +1,12 @@
+import os
+
+def askForInput():
+    #Imagine the user typed in exploitative code
+    return "This string could contain evil commands"
+
+def normalLookingFunction():
+    eval(askForInput)
+
 class Player():
     """Class representing a player."""
 
@@ -22,8 +31,8 @@ class Player():
             raise PlayerNotAlive("Player is not alive")
         elif (self.health + healAmount) >= 100:
             self.health = 100
-        # else:
-        #     self.health += healAmount
+        else:
+            self.health += healAmount
 
 class PlayerNotAlive(Exception):
     pass
