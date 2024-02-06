@@ -1,7 +1,29 @@
-def connect_to_database():
-    username = "admin"
-    password = "secret"
-    # Code to connect to the database using the hard-coded credentials
+class Player():
+    """Class representing a player."""
 
-if __name__ == "__main__":
-    connect_to_database()
+    def __init__(self, initialAmount = 100):
+        if initialAmount == 0:
+            self.health = 0
+            self.alive = False
+        else:
+            self.health = initialAmount
+            self.alive = True
+
+    def hitPlayer(self, damageAmount):
+        if self.alive == False:
+            raise PlayerNotAlive("Player is not alive")
+        elif damageAmount >= self.health:
+            self.alive = False
+        else:
+            self.health -= damageAmount
+
+    def healPlayer(self, healAmount):
+        if self.alive == False:
+            raise PlayerNotAlive("Player is not alive")
+        elif (self.health + healAmount) >= 100:
+            self.health = 100
+        else:
+            self.health += healAmount
+
+class PlayerNotAlive(Exception):
+    pass
