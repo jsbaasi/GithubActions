@@ -33,7 +33,7 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        escaped_code=$(echo "$CODE" | jq -s -R -r @uri)
+        escaped_code=$(echo "$CODE")
         response=$(curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $OPENAI_API_KEY" -d "{\"model\": \"text-davinci-002\", \"prompt\": \"Given the following code:\\n\\n\`\`\`python\\n$escaped_code\\n\`\`\`\\n\\nWhat does this code do? Explain its functionality.\", \"temperature\": 0.7, \"max_tokens\": 150}")
 
         echo "$response"
