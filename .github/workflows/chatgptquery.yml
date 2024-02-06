@@ -26,7 +26,7 @@ jobs:
     - name: Read code from file
       id: read-code
       run: |
-        code=$(cat GithubActions/player.py)
+        code=$(cat player.py)
         echo "::set-output name=code::$code"
 
     - name: Query ChatGPT
