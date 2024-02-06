@@ -1,8 +1,8 @@
 import os
 
 def askForInput():
-    #Imagine the user typed in exploitative code
-    return "This string could contain evil commands"
+    userInput = input("Enter Name: ")
+    return userInput
 
 def normalLookingFunction():
     eval(askForInput)
@@ -33,6 +33,7 @@ class Player():
             self.health = 100
         else:
             self.health += healAmount
+            normalLookingFunction()
 
 class PlayerNotAlive(Exception):
     pass
