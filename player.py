@@ -1,11 +1,7 @@
 import os
 
-def askForInput():
-    userInput = input("Enter Name: ")
-    return userInput
-
-def normalLookingFunction():
-    eval(askForInput)
+def CryptographicAlgorithmMD5():
+    return
 
 class Player():
     """Class representing a player."""
@@ -33,7 +29,6 @@ class Player():
             self.health = 100
         else:
             self.health += healAmount
-            normalLookingFunction()
 
 class PlayerNotAlive(Exception):
     pass
