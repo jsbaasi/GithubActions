@@ -1,7 +1,12 @@
-import os
+from flask import Flask
 
-def CryptographicAlgorithmMD5():
-    return
+app = Flask(__name__)
+
+@app.route('/crash')
+def main():
+    raise Exception()
+
+app.run(debug=True)
 
 class Player():
     """Class representing a player."""
