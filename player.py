@@ -1,9 +1,7 @@
-from flask import Flask
+def connect_to_database():
+    username = "admin"
+    password = "secret"
+    # Code to connect to the database using the hard-coded credentials
 
-app = Flask(__name__)
-
-@app.route('/crash')
-def main():
-    print("Vulnerability")
-
-app.run(debug=True)
+if __name__ == "__main__":
+    connect_to_database()
