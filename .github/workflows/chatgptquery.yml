@@ -33,7 +33,7 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        escaped_code=$(echo "$CODE" | head -n 2)
+        escaped_code=$(echo "$CODE" | head -n 26)
         prompt="{\"role\": \"system\", \"content\": \"You are a helpful assistant.\"}, {\"role\": \"user\", \"content\": \"Given the following code:\\n\\n\`\`\`python\\n$escaped_code\\n\`\`\`\\n\\nWhat does this code do? Explain its functionality.\"}"
 
         response=$(curl https://api.openai.com/v1/chat/completions -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $OPENAI_API_KEY" -d "{\"model\": \"gpt-3.5-turbo\", \"messages\": [$prompt], \"temperature\": 0.7}")
